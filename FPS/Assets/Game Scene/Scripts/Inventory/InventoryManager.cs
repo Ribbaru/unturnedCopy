@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public GameObject UIPanel;
+    public GameObject UIBG;
     public GameObject crosshair;
     public Transform inventoryPanel;
+    public Transform quickSlotPanel;
     public List<InventorySlot> slots = new List<InventorySlot>();
     public bool isOpened;
     public float reachDistance = 3f;
@@ -16,7 +17,7 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        UIPanel.SetActive(true);
+        UIBG.SetActive(true);
     }
     void Start()
     {
@@ -28,7 +29,15 @@ public class InventoryManager : MonoBehaviour
                 slots.Add(inventoryPanel.GetChild(i).GetComponent<InventorySlot>());
             }
         }
-        UIPanel.SetActive(false);
+        for (int i = 0; i < quickSlotPanel.childCount; i++)
+        {
+            if (quickSlotPanel.GetChild(i).GetComponent<InventorySlot>() != null)
+            {
+                slots.Add(quickSlotPanel.GetChild(i).GetComponent<InventorySlot>());
+            }
+        }
+        UIBG.SetActive(false);
+        inventoryPanel.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,8 +48,9 @@ public class InventoryManager : MonoBehaviour
             isOpened = !isOpened;
             if (isOpened)
             {
-                UIPanel.SetActive(true);
+                UIBG.SetActive(true);
                 crosshair.SetActive(false);
+                inventoryPanel.gameObject.SetActive(true);
 
                 // Прекрепляем курсор к середине экрана
                 Cursor.lockState = CursorLockMode.None;
@@ -50,8 +60,9 @@ public class InventoryManager : MonoBehaviour
             }
             else
             {
-                UIPanel.SetActive(false);
+                UIBG.SetActive(false);
                 crosshair.SetActive(true);
+                inventoryPanel.gameObject.SetActive(false);
 
                 // Прекрепляем курсор к середине экрана
                 Cursor.lockState = CursorLockMode.Locked;
@@ -62,7 +73,7 @@ public class InventoryManager : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (Physics.Raycast(ray, out hit, reachDistance))
             {
@@ -97,7 +108,11 @@ public class InventoryManager : MonoBehaviour
                 slot.amount = _amount;
                 slot.isEmpty = false;
                 slot.SetIcon(_item.icon);
-                slot.itemAmountText.text = _amount.ToString();
+                if(slot.item.maximumAmount != 1)
+                {
+                    slot.itemAmountText.text = _amount.ToString();
+                }
+
                 break;
             }
         }

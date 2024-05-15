@@ -374,6 +374,8 @@
 "Assets/Game Scene/Scripts/Inventory/Item.cs"
 "Assets/Game Scene/Scripts/Inventory/ItemCreator.cs"
 "Assets/Game Scene/Scripts/Inventory/ItemScriptableObject.cs"
+"Assets/Game Scene/Scripts/Inventory/QuickslotInventory.cs"
+"Assets/Game Scene/Scripts/PlayerScripts/AxeContoller.cs"
 "Assets/Game Scene/Scripts/PlayerScripts/CharacterMovement.cs"
 "Assets/JMO Assets/WarFX/Demo/Assets/CFX_AutoStopLoopedEffect.cs"
 "Assets/JMO Assets/WarFX/Demo/Assets/CFX_Demo_RandomDir.cs"
