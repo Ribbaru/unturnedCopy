@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   itemName: Apple
-  maximumAmount: 2
+  maximumAmount: 100
   itemPrefab: {fileID: 6397927578113835442, guid: 88f03cbc5a019fa4facce4c51d8d5d61, type: 3}
   icon: {fileID: 21300000, guid: e36043abc99e0e34b91a8db87631a9c5, type: 3}
   itemType: 1
   itemDescription: fresh red apple
   isConsumeable: 1
-  changeHealth: 20
-  changeHunger: 0
-  changeThirst: 0
-  healAmount: 0
+  inHandName: 
+  changeHealth: 0
+  changeHunger: 20
+  changeThirst: 10
+  healAmount: 5

@@ -52,7 +52,7 @@ public class AxeController : MonoBehaviour
         }
 
         anim.SetBool("axeAttack", true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         anim.SetBool("axeAttack", false);
         axeCanAttack = false; // Устанавливаем перезарядку
         yield return new WaitForSeconds(1);

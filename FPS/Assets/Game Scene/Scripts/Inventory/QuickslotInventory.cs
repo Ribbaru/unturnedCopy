@@ -15,6 +15,7 @@ public class QuickslotInventory: MonoBehaviour
     public Text healthText;
     public InventorySlot activeSlot = null;
     public Transform allWeapons;
+    public Indicators indicators;
 
     // Update is called once per frame
     void Update()
@@ -122,17 +123,9 @@ public class QuickslotInventory: MonoBehaviour
 
     private void ChangeCharacteristics()
     {
-        // Если здоровье + добавленное здоровье от предмета меньше или равно 100, то делаем вычисления... 
-        if(int.Parse(healthText.text) + quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().item.changeHealth <= 100)
-        {
-            float newHealth = int.Parse(healthText.text) + quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().item.changeHealth;
-            healthText.text = newHealth.ToString();
-        }
-        // Иначе, просто ставим здоровье на 100
-        else
-        {
-            healthText.text = "100";
-        }
+        indicators.ChangeFoodAmount(quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().item.changeHunger);
+        indicators.ChangeWaterAmount(quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().item.changeThirst);
+        indicators.ChangeHealthAmount(quickslotParent.GetChild(currentQuickslotID).GetComponent<InventorySlot>().item.changeHealth);
     }
     public void CheckItemInHand()
     {

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3793bf48a76ee744b884478500b89e8, type: 3}
+  m_Name: BigMedKit
+  m_EditorClassIdentifier: 
+  itemName: BigMedKit
+  maximumAmount: 20
+  itemPrefab: {fileID: 7368562359402818967, guid: 6ae4eadb5261f6845a5cdb37f8facddf, type: 3}
+  icon: {fileID: 21300000, guid: 20397db5c2e43bb4e8f35826e8a7a7de, type: 3}
+  itemType: 1
+  itemDescription: 
+  isConsumeable: 1
+  inHandName: 
+  changeHealth: 50
+  changeHunger: 10
+  changeThirst: 10
+  healAmount: 0

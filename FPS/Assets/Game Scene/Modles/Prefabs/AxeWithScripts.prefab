@@ -18,23 +18,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.30000004
+      value: 0.30000007
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.20000002
+      value: 0.20000003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.377
+      value: -0.057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.371
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.693
+      value: 0.245
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneAxe
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
@@ -124,6 +128,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1451763149}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7898051495519821604}
   m_SourcePrefab: {fileID: 100100000, guid: 4d5f674ac71350246b7bdf2c620cc33f, type: 3}
 --- !u!1 &7983012569575284118 stripped
 GameObject:
@@ -143,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axeCanAttack: 1
-  anim: {fileID: 0}
+  anim: {fileID: 1451763149}
   inventoryManager: {fileID: 0}
   quickslotInventory: {fileID: 0}
 --- !u!95 &1451763149
@@ -166,3 +173,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &7898051495519821604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983012569575284118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372da1fff98e1e54c80caca8461e9f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  inventoryManager: {fileID: 0}
+  resourceAmount: 0
+  resource: {fileID: 0}
